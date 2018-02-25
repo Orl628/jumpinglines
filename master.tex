@@ -1,0 +1,82 @@
+\documentclass[paper=A4,%
+parskip=half,
+%BCOR=1cm % Mehr Platz am Rand fürs Binden!
+draft=false,
+abstracton
+%firstfoot=false
+]{scrartcl}
+
+\addtokomafont{sectioning}{\rmfamily}
+\setkomafont{title}{\normalfont\scshape}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+%So that headings are also in serif
+
+
+% Settings for optimal screen viewing (my laptop screen)
+% \documentclass[twocolumn]{article}
+% \usepackage[top=0.1in, bottom=0.1in, left=0.3in, right=0.3in, paperwidth=9in, paperheight=4in]{geometry}
+
+\input{mystyle.tex}
+
+\newcommand{\schemeofsurfaces}{\abs{\mc{O}(d)}}
+\newcommand{\schemeofquartics}{\abs{\mc{O}(4)}}
+\newcommand{\schemeofsections}[1]{\abs{\mc{O}(#1)}}
+\newcommand{\divides}{\mid}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\setcounter{tocdepth}{1}
+
+% %Name of the author of the thesis 
+% \authornew{Orlando Marigliano}
+% %Date of birth of the Author
+% \geburtsdatum{5th August 1994}
+% %Place of Birth
+% \geburtsort{Rome, Italy}
+% %Date of submission of the thesis
+% \date{10th January 2018}
+% %Name of the Advisor
+% % z.B.: Prof. Dr. Peter Koepke
+% \betreuer{Advisor: Prof.\ Daniel Huybrechts}
+% %Name of the Insitute of the advisor
+% \zweitgutachter{Second Advisor: Dr.\ Andrey Soldatenkov}
+% %name of the second advisor of the thesis
+% %z.B.: Mathematisches Institut
+% \institut{Mathematical Institute}
+% %Title of the thesis 
+% \title{Verlinde Bundles of Families of Hypersurfaces}
+% %Do not change!
+% \ausarbeitungstyp{Master's Thesis  Mathematics}
+
+\title{Verlinde bundles of families of hypersurfaces and their jumping lines}
+\author{Orlando Marigliano}
+
+\begin{document}
+%\includepdf[pages={-}]{myThesis}
+\maketitle
+\begin{abstract}
+	\noindent Verlinde bundles are vector bundles $V_k$ arising as the direct image $\pi_*(\mc L^{\otimes k})$ of polarizations of a proper family of schemes $\pi\colon \mathfrak X \to S$. We study the splitting behavior of Verlinde bundles in the case where $\pi$ is the universal family $\mathfrak X \to \schemeofsurfaces$ of hypersurfaces of degree $d$ in $\schemeofsurfaces$ and calculate the cohomology class of the locus of jumping lines of the Verlinde bundles
+	$V_{d+1}$ in the cases $n=2,3$.  
+\end{abstract}
+%\tableofcontents
+%Bisherige Kapitel
+%\input{introduction}
+%\input{introduction-paper.tex}
+%\input{universal-families-of-extensions.tex}
+%\input{lefschetz-pencils.tex}
+%\input{pencils-hypersurfaces}
+%\input{specialization.tex}
+
+\input{general-facts-verlinde.tex}
+\input{types-of-bundles}
+\input{loci-types}
+%\input{global-properties}
+
+%\input{misc-notes.tex}
+
+%\bibliographystyle{alpha}
+%\bibliography{masterarbeit-bib}{}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}

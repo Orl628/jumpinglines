@@ -1,0 +1,136 @@
+%!TEX root = ./master.tex
+\section{Specialization of Vector Bundles on \texorpdfstring{$\PP^1$}{P1}}
+
+Let $V$ be a vector bundle on $\PP^1.$ The Birkhoff–Grothendieck theorem says that $V$ can be written as a direct sum $V=\bigoplus_i \mc{O}(b_i)$, with a unique tuple $(b_i)$ of integers. The tuple $(b_i)$ is also called the \emph{splitting type} of $V$. To study a vector bundle $W$ on a projective space $\PP^m$, one can examine the restriction of $W$ to lines $T\subset \PP^m$, and ask how the splitting type of $W|_T$ varies with $T$. Which splitting behavior should one expect for general $T$? To answer this question, we look at families of vector bundles over $\PP^1$ and ask about their general and special members. Which pairings of a general and a special splitting type are possible in a family? This section makes this question precise using the notion of specialization and provides an answer.
+
+\begin{definition}
+	Let $ V$ and $V'$ be vector bundles on a projective $k$-scheme $X$. We say that $ V$ \emph{specializes} to $V'$ if there exists an affine $k$-scheme $Y$, spectrum of a discrete valuation ring, with generic point $\eta$ and closed point $\eta_0$, and a vector bundle $W$ on
+	$Y\times X$
+	such that
+	$ W|_{\eta \times X} \simeq \kappa(\eta)\boxtimes V$
+	and
+	$ W|_{\eta_0 \times X} \simeq \kappa(\eta_0)\boxtimes V'$. 
+\end{definition}
+% Stack etc works out: see 2.24 in https://arxiv.org/pdf/math/9911199.pdf
+
+\begin{remark} \label{rem:specialization-sum}
+	If $ V$ specializes to $ V'$ and $ W$ specializes to $ W'$, then $ V\oplus W$ specializes to $ V'\oplus W'$.
+\end{remark}
+
+\begin{remark}
+	Specialization is transitive for $X=\PP^1$: if $ V$ specializes to $V'$ and $V'$ specializes to $V''$, then $ V$ specializes to $V''$, see e.g.\ \cite[Cor.\ 6.14]{ramamathan-deformations}.
+\end{remark}
+% TODO: try to generalize this to all X. To do this, go through the proof of transitivity in Ram83 and see if it can be generalized.
+
+\begin{remark}
+	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $ V$ and $\kappa(\eta) \boxtimes  V$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
+\end{remark}
+
+\begin{remark} \label{rem:scalars-on-ext} Let
+	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{g}{\mc{G}} \]
+	be a short exact sequence of coherent sheaves over a $k$-scheme $X$ and let $\xi \in \Ext^1(\mc{G},\mc{F})$ be the corresponding element. If $a \in H^0(X,\mc{O}^{\times}_X)$, then the element $a\xi$ corresponds to the sequence
+	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{a^{-1}g}{\mc{G}}.\]
+	% To see this, consider the map of exact sequences
+	% \[\begin{tikzcd}
+	% 	0 \arrow{r} &
+	% 	\mc{F} \arrow{r}{f} \arrow[equal]{d} &
+	% 	\mc{E} \arrow{r}{a^{-1}g} \arrow[equal]{d} &
+	% 	\mc{G} \arrow{r} \arrow{d}{a} &
+	% 	0 \\
+	% 	0 \arrow{r} & \mc{F} \arrow{r}{f} & \mc{E} \arrow{r}{g} & \mc{G} \arrow{r} & 0
+	% and use the naturality of the boundary homomorphism.
+	% % maybe too wordy, maybe mention the correspondence explicitely somewhere else.
+	% \end{tikzcd} \]
+	% % Let $\delta, \delta' \from \Hom(\mc{G},\mc{G}) \to \Ext^1(\mc{G},\mc{F})$ be the boundary homomorphisms associated to the upper and lower sequence respectively. We have on the one hand $\delta'(\id) = a \delta(\id)$ by naturality, and on the other hand $\delta(\id) = \xi$ since this is the way extensions are identified with elements of $\Ext^1$.
+	% % mention general scalar multiplication explicitely with pullbacks.
+\end{remark}
+
+\begin{example}
+	The vector bundle $\mc{O}(1)\oplus \mc{O}(1)$ on $\PP^1$ specializes to $\mc{O}\oplus \mc{O}(2)$.
+	This can be seen as follows.
+	The elements of $\Ext^1(\mc{O}(2),\mc{O})$ correspond to extensions of the form
+	\[ \ses{\mc{O}}{\mc{E}}{\mc{O}(2)}\]
+	up to equivalence. The zero element corresponds to the split extension $\mc{E} = \mc{O} \oplus \mc{O}(2)$.
+	Note that all such extensions must have $\mc{E}$ locally free.
+	Considering the formulae for ranks and determinants of the components of the sequence, we see that the nonsplit extensions must have
+	$\mc{E}=\mc{O}(1)\oplus\mc{O}(1)$.
+	Furthermore, we have \[\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k.\]
+	By \Cref{cor:universal-extension} and using $\VV(\Ext^1(\mc{O}(2),\mc{O})\dual)\simeq \AA^1$, there exists an extension of the form
+	\[\ses{\mc{O}_{\AA^1} \boxtimes \mc{O}}{\mc{E}_{\text{univ}}}{\mc{O}_{\AA^1}\boxtimes \mc{O}(2)}\]
+	on $\AA^1\times \PP^1$
+	such that for $\xi\in\AA^1$ generic we have
+	$\mc{E}_{\text{univ}}|_{\xi \times \PP^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$
+	and for $\xi=0$ we have 
+	$\mc{E}_{\text{univ}}|_{0\times \PP^1} \simeq \mc{O} \oplus \mc{O}(2)$.
+	Since $\mc{E}_{\text{univ}}$ is locally free, $\mc{O}(1)\oplus \mc{O}(1)$ specializes to $\mc{O}(2)\oplus \mc{O}$.
+\end{example}
+
+\begin{remark} \label{rem:exact-sequence-exists}
+	Let $b_1,\dotsc,b_m$ be non-negative integers, let $a\coloneqq \sum b_i$, and let $s,t$ denote the homogeneous coordinates on $\PP^1$. The sequence
+	\[ \sesarrows{\mc{O}^{m-1}}{f}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{g}{\mc{O}(a)} \]
+	with \[
+	f = \begin{pmatrix}
+	s^{b_1}&        &	   &           \\
+	t^{b_2}& s^{b_2}&      &           \\
+	       & t^{b_3}&\ddots&           \\
+	       &        &\ddots&s^{b_{m-1}}\\
+	       &        &      &t^{b_m}
+	\end{pmatrix} 
+	\]
+	and
+	\[
+	g = \begin{pmatrix}
+	-t^{a-b_1} & s^{b_1}t^{a-b_1-b_2} & \cdots & (-1)^{m} s^{b_1 + \dotsb + b_{m-1}}t^{a-b_1-\dotsb-b_m}
+	\end{pmatrix}
+	\]
+	is exact.
+\end{remark}
+%maybe prove this?
+
+\begin{proposition} \label{specialization-partitions}
+	Let $b_1,\dotsc,b_m$ be non-negative integers and $\pi$ a partition of the set $\{1,\dotsc,m\}$. For a set of indices $I\in \pi$, let $b'_I \coloneqq \sum_{i \in I} b_i$. Then the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i)$ on $\PP^1$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I) \oplus \mc{O}^{\oplus m-\abs{\pi}}$.	
+\end{proposition}
+
+\begin{proof}
+	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(a)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ of an exact sequence of the form
+	\begin{align} \label{chosen-exact-sequence}
+		\sesarrows{\mc{O}^{m-1}}{}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{}{\mc{O}(a)}. %\tag{$\star$}
+	\end{align}
+	By \Cref{rem:scalars-on-ext}, scalar multiplication by $\lambda \neq 0$ does not change the isomorphism class of the middle term of the sequence, hence there exists a one-dimensional subspace $k \injectto \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ such that each nonzero element corresponds to an exact sequence of the form
+	\cref{chosen-exact-sequence}. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
+\end{proof}
+
+\begin{remark} \label{my-specialization}
+	By twisting the exact sequence \cref{chosen-exact-sequence} in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
+\end{remark}
+
+\begin{definition} \label{def-compare-types}
+	For tuples $(b_i)$ and $(b'_i)$ of the same size $r$, we define the expression $(b'_i) \geq (b_i)$ to mean
+	\[
+		\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i \text{ for all $s=1,\dotsc, r$}.
+	\]
+\end{definition}
+
+\begin{proposition}
+	Let $b=(b_i)_{i=1}^m$ and $b'=(b'_i)_{i=1}^m$ be tuples of integers such that $\sum b_i = \sum b'_i$ and $b\leq b'$ in the sense of \Cref{def-compare-types}. Then $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b'_i)$.
+\end{proposition}
+
+\begin{proof}
+	Since $b\leq b'$, there exists a sequence of tuples $b=b^{(0)},b^{(1)},\dotsc,b^{(n)}=b'$ such that for all $k=1,\dotsc,n$, the tuple $b^{(k)}$ differs from $b^{(k-1)}$ only by two entries
+	\[
+		b^{(k)}_i = b^{(k-1)}_i - 1, \quad
+		b^{(k)}_j = b^{(k-1)}_j + 1.
+	\]
+	By \Cref{my-specialization}, $\mc{O}(b^{(k)}_i) \oplus \mc{O}(b^{(k)}_j)$ specializes to $\mc{O}(b^{(k-1)}_i) \oplus \mc{O}(b^{(k-1)}_j)$, hence $b^{(k-1)}$ specializes to $b^{(k)}$. By transitivity of specialization, $b$ specializes to $b'.$
+\end{proof}
+
+\newcommand{\HNP}{\operatorname{HNP}}
+
+\begin{remark}
+	In fact, if $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$, then $(b_i)\leq (b_i')$. The missing implication is proven \eg in \cite[Thm.\ 3]{schatz-degeneration-specialization}. There, the statement is expressed in terms of the Harder–Narasimhan polygon $\HNP$ of a vector bundle $E$. In our case, if $E\simeq \bigoplus \mc{O}(b_i)$ is a vector bundle on $\PP^1$, then $\HNP$ is the polygon under the graph of the function $\{0,\dotsc,\rank E\}\to \NN_{\geq 0}$ given by $s\mapsto \sum_{i=1}^s b_i$. Thus, $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$ if and only if the HNP of the first bundle lies below the HNP of the second.
+
+	Thus, the most general splitting type among bundles of fixed rank $r$ and degree $c_1$ is the uniquely determined type 
+    of the form
+	$(b + 1,\dotsc,b + 1,b,\dotsc,b)$. The integer $b$ is determined by the equation
+	$c_1 = b r + a$, with $a < r$ becoming the number of occurences of $b +1$.
+\end{remark}

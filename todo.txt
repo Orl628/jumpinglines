@@ -1,0 +1,32 @@
+To do.
+
+* Improve section on scalar multiplication on Ext^1
+	- move it to a more general theory about ext section
+	- start from general multiplication by elements of the global sections, with pullbacks
+	- specialize to invertible scalars
+
+* Add metadata for Hemminghaus citation.
+
+* Replace Hemminghaus citation with own proof
+
+* Maybe write up Grauert's Theorem and Cohomology and Base Change (low priority).
+
+* Make sure the locus where V_k is of general type is not empty.
+
+* Abbreviate "Lefschetz pencil"
+
+* Substitute the d_i with b_i
+
+-----SECOND DRAFT-----
+
+* On page 3, use maybe that Ext(F,G) = H^1(X,F\dual \otimes G) for F locally free, and then that we have the usual base change theorems. (\ref{prop:ext-base-change})
+
+* Explain notation \boxtimes
+
+* Props. 1.4. und 1.5.: add reference, or cut. E.g. cut prop. 1.4.
+
+* Clarify scheme language, remove the rational points.
+
+-----THIRD DRAFT------
+
+

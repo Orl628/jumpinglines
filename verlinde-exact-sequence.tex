@@ -1,0 +1,38 @@
+\begin{proposition} \label{verlinde-exact-sequence}
+	There exists a short exact sequence of vector bundles on $\schemeofsurfaces$ 
+	\begin{equation} \label{master-verlinde-sequence}
+	0\to  \mc{O}(-1) \otimes H^0(\PP^n, \mc{O}(k-d)) 
+	\xto{M}  \mc{O} \otimes {H^0(\PP^n, \mc{O}(k))   }
+	\to{V_k}
+	\to 0.
+	\end{equation}
+	The map $M$ is given by multiplication by
+	$\sum_I \alpha_I \otimes x^I \in
+	H^0(\schemeofsurfaces,\mc{O}(1)) \otimes H^0(\PP^n,\mc{O}(d)).$
+	\end{proposition}
+
+\begin{proof}
+	The proof, found in \cite[Proposition 4.2]{hemminghaus-verlinde-bundles}, is reproduced below.
+
+	The structure sequence of $\mathfrak X$ on $\PP^n \times \schemeofsurfaces$ is
+	\[
+		\ses{\mc{O}_{\PP^n}(-d)\boxtimes \mc{O}_{\schemeofsurfaces}(-1)}
+		{\mc{O}_{\PP^n}\boxtimes \mc{O}_{\schemeofsurfaces}}
+		{\mc{O}_{\mathfrak X}},
+	\]
+	the first map given by multiplication with $\sum_I \alpha_I \otimes x^I$.
+	Twisting with $\mc{L}^{\otimes k}=\mc{O}(k)\boxtimes \mc{O}$, we get the exact sequence
+	\[
+		\ses{\mc{O}(k-d)\boxtimes \mc{O}(-1)}
+		{\mc{O}(k)\boxtimes \mc{O}}
+		{\mc{L}^{\otimes k}|_X}.
+	\]
+	Applying the pushforward 
+	$\pi_*$
+	we get the sequence \cref{master-verlinde-sequence}, 
+	which is exact as
+	\[
+		R^1 \pi_* (\mc{O}(k-d)\boxtimes \mc{O}(-1)) = 0.
+	\]
+	The description of the map $M$ follows by the definition of the pushforward.
+\end{proof}

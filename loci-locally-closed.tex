@@ -1,0 +1,26 @@
+\begin{remark}
+	Let $(b_i)$ be a splitting type for $V_k$. The set $\widehat Z_{(b_i)} \coloneqq \bigcup_{(b'_i)\geq(b_i)} Z_{(b'_i)}$ is Zariski-closed. In particular, the set $Z_{(b_i)}$ is locally closed and the set of jumping lines $Z = Z_{(2,1,\dotsc,1,0,\dotsc,0)}$ is closed. An 
+\end{remark}
+
+\begin{proof}
+Let $t\in \GGr(1,\schemeofsurfaces)$ and $V_{k,t} = \bigoplus_{i=1}^{r^{(k)}} \mc{O}(b'_i)$. We have
+\[
+\bigwedge^s V_{k,t} = \bigoplus_{I} \mc{O}(b_I'),
+\]
+where $I$ runs over the subsets of $\{1,\dotsc, r^{(k)}\}$ of size $s$ and $b'_I\coloneqq \sum_{i\in I} b'_i$.
+For every type candidate $(b'_i)$, the sum $\sum_{i=1}^s b'_i$ is the largest sum of $s$ entries of $(b'_i)$. Since $b'_i \geq 0$, the condition $\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i$ is equivalent to the condition $h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0$. Thus, we have
+\[
+	\widehat Z_{(b_i)} = \bigcap_{s=1}^{r^{(k)}} \{t : h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0\}.
+\]
+With Serre duality and the Cohomology and Base Change theorem we write the sets of the intersection as 
+\[
+	\Supp(R^1 \pushf \phi (\pullb p (\textstyle{\bigwedge}^{s} V_k\dual )(\textstyle{\sum}^s b_i - 2))),
+\]
+which is Zariski-closed.
+% \[
+% {\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+% \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+% \to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+% \to 0.
+% \]
+\end{proof}

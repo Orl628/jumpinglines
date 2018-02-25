@@ -1,0 +1,15 @@
+[0] Config.pm:354> INFO - This is Biber 2.7 (beta)
+[0] Config.pm:357> INFO - Logfile is 'master.blg'
+[32] biber:303> INFO - === So Feb 25, 2018, 19:51:25
+[47] Biber.pm:360> INFO - Reading 'master.bcf'
+[124] Biber.pm:836> INFO - Found 3 citekeys in bib section 0
+[141] Biber.pm:3671> INFO - Processing section 0
+[158] Biber.pm:3841> INFO - Looking for bibtex format file 'masterarbeit-bib.bib' for section 0
+[162] bibtex.pm:1424> INFO - Decoding LaTeX character macros into UTF-8
+[169] bibtex.pm:1281> INFO - Found BibTeX data source 'masterarbeit-bib.bib'
+[189] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[189] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[189] Biber.pm:3500> INFO - Sorting list 'anyt/global/' of type 'entry' with scheme 'anyt' and locale 'en-US'
+[189] Biber.pm:3506> INFO - No sort tailoring available for locale 'en-US'
+[195] bbl.pm:608> INFO - Writing 'master.bbl' with encoding 'UTF-8'
+[196] bbl.pm:712> INFO - Output to master.bbl

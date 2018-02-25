@@ -1,0 +1,69 @@
+\begin{proposition} \label{supp-are-det-varieties}
+The sets
+$\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b^{(k)}-1))$ and
+$\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b^{(k)})\dual))$ 
+are determinantal varieties in the sense of \cite[Ch.~II, §4]{arbarello-geometry-algebraic-curves}
+\end{proposition}
+\begin{proof}
+To simplify notation, set
+$r_1 \coloneqq \dim H^0(\PP^n, \mc{O}(k)),
+r_2 \coloneqq \dim H^0(\PP^n, \mc{O}(k-d))$ and $b\coloneqq b^{(k)}$,
+and rewrite the exact sequence from \Cref{verlinde-exact-sequence} as
+\begin{align} \label{verlinde-simplified-exact-sequence}
+\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. %\tag{$\star$}
+\end{align}
+Twisting the sequence \cref{verlinde-simplified-exact-sequence} with $\mc{O}(-b-1)$ and pulling back to $P$ gives an exact sequence
+\[
+0
+\to  {\pullb{p}\mc{O}(-b-2)^{r_2}}
+\to  {\pullb{p}\mc{O}(-b-1)^{r_1}}
+\to  {\pullb{p}V_k(-b-1)}
+\to  0.
+\]
+For all $t\in \GGr(1,\schemeofsurfaces)$ we have
+$h^2(P_t, \mc{O}(-b-2)^{r_2}) = 0$,
+hence
+$R^2\pushf{\phi}\pullb{p}\mc{O}(-b-2)^{r_2} = 0$
+and applying $\pushf{\phi}$ to the above sequence gives an exact sequence
+\[
+R^1\pushf{\phi}\pullb{p}\mc{O}(-b-2)^{r_2}
+\xto{\alpha}
+R^1\pushf{\phi}\pullb{p}\mc{O}(-b-1)^{r_1} 
+\to
+R^1\pushf{\phi}\pullb{p} V_k(-b-1)
+\to 0.
+\]
+Note that since the numbers
+$
+h^{1}_{2}\coloneqq h^1(P_t, \mc{O}(-b-2)^{r_2})
+\text{ and }
+h_{1}^{1}\coloneqq h^1(P_t, \mc{O}(-b-1)^{r_1})
+$
+do not depend on the point $t$, Grauert's Theorem applies, and the first two terms of the above sequence are locally free and coherent of rank $h_1^2$ and $h_1^1$, respectively. Since taking the fiber is right-exact, we see that for all $t$ we have
+$(R^1\pushf{\phi}\pullb{p} V_k(-b-1))_t \neq 0$ if and only if $\coker(\alpha_t) \neq 0$. Concluding, we have
+\[
+\Supp(R^1\pushf{\phi}(\pullb{p} V_k(-b-1)))
+= \{t : \rank (\alpha_t)\leq h^{1}_1 - 1\}.
+\]
+As a final remark, note that $h^1_1 = b r_1 = b \binom{k+n}{n}.$
+
+The proof for the second assertion is similar. We start with the sequence \cref{verlinde-simplified-exact-sequence}, twist with $\mc{O}(-b)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for all $t\in \GGr(1,\schemeofsurfaces)$ we have $h^1(P_t, \mc{O}(b)^{r_1})=0$, we obtain an exact sequence
+\[
+	{\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+\xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+\to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+\to 0.
+\]
+Since the numbers
+$
+h^0_1 \coloneqq h^0(P_t,\mc{O}(b)^{r_1}) \text{ and }
+h^0_2 \coloneqq h^0(P_t, \mc{O}(b+1)^{r_2})
+$
+do not depend on the point $t$, again by Grauert's Theorem the first two terms of the sequence are locally free of rank $h^0_1$ and $h^0_2$, respectively. As before, we obtain the characterization
+\[
+	\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual))
+	= \{t : \rank (\beta_t)\leq h^{0}_2 - 1\}.
+\]
+Here, we have $h_2^0 = (b+2)r_2 = (b+2)\binom{k+n-d}{n}.$
+% Gilt Serre-dualität auch für Familien?
+\end{proof}

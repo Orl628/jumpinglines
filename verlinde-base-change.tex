@@ -1,0 +1,42 @@
+\begin{proposition} \label{verlinde-base-change}
+	Let $k\geq 1$. The following statements hold:
+
+	\begin{enumerate}
+	\huyitem If $q\in \schemeofsurfaces$ then
+	$h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+n}{n} - \binom{k+n-d}{n}$.
+	In particular, this number is independent of the point $q$.
+
+	\huyitem The sheaf
+	$\pushf{\pi}\mc{L}^{\otimes k}$
+	is locally free of rank
+	$\binom{k+n}{n} - \binom{k+n-d}{n}$.
+
+	\huyitem For all cartesian diagrams of the form 
+	\[
+	\cartesiansquare{\mf{X}_{Z}}{}{\mf{X}}{\pi_Z}{\pi}{Z}{\rho}{\schemeofsurfaces}
+	\]
+	we have
+	$\pullb{\rho}\pushf{\pi}\mc{L}^{\otimes k}
+	\simeq
+	\pushf{(\pi_Z)}\mc{L}^{\otimes k}_Z$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	The proof for the first statement is found in
+	\cite[Proposition 4.1]{hemminghaus-verlinde-bundles}
+	and reproduced below. The others follow from Grauert's Theorem
+	\cite[{}28.1.5]{vakil-algebraic-geometry}.
+
+	Let $X\coloneqq \mathfrak X_q$ be the hypersurface of degree $d$ corresponding to the point $q$. We have $\mc{L}^{\otimes k}|_q = \mc{O}_{\PP^n}(k)|_{X}$. Twisting the structure sequence
+	\[\ses{\mc{O}(-d)}{\mc{O}}{\mc{O}_{X}}\]
+	on $\PP^n$
+	with $\mc{O}(k)$ yields the short exact sequence
+	\[\ses{\mc{O}(k-d)}{\mc{O}(k)}{\mc{L}^{\otimes k}|_q}.\]
+	The statement follows by taking global sections and using $H^1(\mc{O}(k-d),\PP^n)=0$ for $n>1$.
+	% Todo: replace with own short proof
+	% of the sections of the sheaf $\mc{L}$ at the fiber of a point $q\in \schemeofsurfaces$ does not depend on $q$. Indeed, the fiber $\mc{X}_q$ is a hypersurface of degree $4$ embedded in the projective space $\PP^{3}_{\kappa(q)}$. Its structure sequence on $\PP^{3}_{\kappa(q)}$ is
+	% \[\ses{\mc{O}(-d)}{\mc{O}}{\mc{O}_{X_q}}.\]
+	% Twisting with $\mc{O}(k)$ yields
+	% \[\ses{\mc{O}(k-d)}{}{}\]
+\end{proof}

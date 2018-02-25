@@ -1,0 +1,40 @@
+\begin{proposition}
+	The set $Z_{\text{gen}}$ is Zariski open. Its complement Z is the union
+	\[
+		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b^{(k)}-1)) \cup
+		\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b^{(k)})\dual)).
+	\]
+\end{proposition}
+\begin{proof}
+	We begin by characterizing the set $\generallocus$ via cohomology. Let $t\in \GGr(1,\schemeofsurfaces)$, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(b_i)$ and $b\coloneqq b^{(k)}$. We have $t\in \generallocus$ if and only if $b\leq b_i \leq b+1$ for all $i$, which holds if and only if
+	$
+	H^1(P_t, V_{k,t}(-b-1))
+	=
+	H^1(P_t, V_{k,t}(-b)\dual)
+	=0.
+	$
+
+	Next, we want to apply the Cohomology and Base Change Theorem \cite[{}28.1.6]{vakil-algebraic-geometry} to the map 
+	$\phi \from P \to \GGr(1,\schemeofsurfaces)$, which is a $\PP^1$-bundle, proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\GGr(1,\schemeofsurfaces)$.
+
+	For all $t\in \GGr(1,\schemeofsurfaces)$ we have
+	$
+	h^2(P_t, \pullb{p}V_{k,t}(-b-1)) = 0
+	\text{ and }
+	h^2(P_t,\pullb{p}V_{k,t}(-b)\dual)=0.
+	$
+	Since the sheaves $\pullb{p}V_{k,t}(-b-1)$ and $\pullb{p}V_{k,t}(-b)\dual$ are locally free and coherent, we have 
+	\[(R^1 \pushf{\phi}\pullb{p} V_{k}(-b-1))_t = H^1(P_t,V_{k,t}(-b-1))\]
+	\text{ and }
+	\[
+	(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual))_t = H^1(P_t,V_{k,t}(-b)\dual).
+	\]
+
+	By the previous characterization, we have
+	\[
+		Z =
+		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b-1)) \cup
+		\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)),
+	\]
+	which is a Zariski closed set.
+\end{proof}

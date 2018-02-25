@@ -1,0 +1,190 @@
+%!TEX root = ./master.tex
+%%% PACKAGES
+
+% XeLaTeX
+\usepackage{xltxtra}
+
+% Inernational
+\usepackage[ngerman, english]{babel}
+
+% math stuff
+\usepackage{
+  amsmath,
+  amssymb,
+  amsthm,
+  mathtools,
+  latexsym
+}
+
+%so that amsmath plays nice with parskip
+% \makeatletter
+% \def\thm@space@setup{%
+%   \thm@preskip=\parskip \thm@postskip=0pt
+% }
+% \makeatother
+
+% more arrows
+\usepackage{stmaryrd} % for mapsfrom
+\usepackage{extarrows} % for xlongrightarrow
+
+% more symbols
+\usepackage{upgreek} % upright greek letters
+
+% more flexible enumerations
+\usepackage{enumitem}
+\setlist[enumerate]{labelwidth=!,wide,labelindent=0pt,itemsep=0pt,label=(\roman*)}
+\newcommand{\huyitem}{\normalfont \rmfamily \item \normalfont \itshape}
+
+% for commutative diagrams
+\usepackage{tikz-cd}
+\usetikzlibrary{babel} % otherwise babel fucks up tikzcd
+
+% aesthetics
+%\usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
+\usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
+\usepackage{microtype} % better everything
+
+% typographic settings
+%\usepackage[margin=1.3in]{geometry}
+% \usepackage{geometry}
+% \usepackage{calc}
+% \newcommand{\alphabet}{%
+%   abcdefghijklmnopqrstuvwxyz%
+% }
+% \newlength{\textW}
+% \setlength{\textW}{\widthof{\alphabet}* \real{2.5}}
+% \geometry{textwidth=\textW,}
+%\usepackage[dmyyyy]{datetime}
+%\renewcommand{\dateseparator}{.}
+
+% Latin modern font choice
+\usepackage{lmodern}
+
+% Libertinus font choice, copied from project's Github
+% \usepackage{unicode-math}
+% \setmainfont{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmathfont[AutoFakeBold]{Libertinus Math}
+% \setmathfont[range={\mathcal, \mathscr}]{xits-math.otf}
+% \setmathfont[range={}]{Libertinus Math}
+
+% paragraph settings
+%\setlength{\parindent}{0cm} % no paragraph indentation
+%\setlength{\parskip}{0.6em} % wider paragraph spacing
+
+%\usepackage{parskip}
+
+% Hyperlinks in references
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\usepackage{cleveref} % \cref, \Cref
+
+\usepackage{multirow}  % for `\multirow` macro
+
+\usepackage{mycommands} 
+
+% Bibliography
+\usepackage[backend=biber, style=alphabetic, isbn=false, url=true, doi=false, maxbibnames=99]{biblatex}
+\renewbibmacro{in:}{}
+\DefineBibliographyStrings{english}{% no p. or pp. before pages
+  page             = {},
+  pages            = {},
+}
+% to remove quotes
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1}
+
+\addbibresource{masterarbeit-bib.bib}
+\setlength\bibitemsep{\parskip}
+% maybe collect bib settings into separate file... another file to track...
+
+%%% TEXT SETTINGS
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+% link colors
+\hypersetup{linkcolor=blue,citecolor=darkgreen,filecolor=black,urlcolor=cyan}
+
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{computation}[theorem]{Computation}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{claim}{Claim}[theorem]
+
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
+
+
+
+% numbering settings
+%\renewcommand{\thesection}{\arabic{section}.}
+%\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+%\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+%\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\usepackage{chngcntr}
+%\counterwithout{equation}{section} % undo numbering system provided by phstyle.cls
+\counterwithin{equation}{section}
+\crefformat{equation}{\textup{#2(#1)#3}}
+%\renewcommand{\ref}{\cref}
+% hypenation
+\hyphenation{mo-no-dro-my}
+
+%%% PAST GOOD IDEAS
+
+% Abbreviations
+\newcommand{\ie}{i.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\cf}{cf.\ }
+
+\newcommand{\isom}{\simeq}
+\newcommand{\mrm}{\mathrm}
+\DeclareMathOperator{\im}{im}
+\newcommand{\wtilde}{\widetilde}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\codim}{codim}
+%\DeclareMathOperator{\deg}{deg}
+%\DeclareMathOperator{\ker}{ker}
+%\newcommand{\pr}{\mathrm{pr}}
+
+% Symbols
+\newcommand{\leer}{\varnothing} % preferred symbol for the empty set
+%\newcommand{\singleton}{\{\mathrm{pt}\}} % may also consider ``{*}''
+
+% Accents
+%\newcommand{\closure}[2][3]{ % closure for bigger symblos
+%  {}\mkern#1mu\overline{\mkern-#1mu#2}}
+
+% The perfect :=
+% \newcommand*{\defeq}{\mathrel{\rlap{
+%  \raisebox{0.3ex}{$\m@th\cdot$}}
+%  \raisebox{-0.3ex}{$\m@th\cdot$}}
+% =}
+
+% Arrows
+% \newcommand{\isom}{\xrightarrow{\sim}}
+
+% Brackets
+% \newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}
+ \newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+% \newcommand{\floor}[1]{\left \lfloor #1 \right\rfloor}
+% \newcommand{\abs}[1]{|#1|}
+
+% Diagrams and Matrices
+%\newcommand{\ses}[6]{ % short exact sequence!
+%  \begin{tikzcd}[ampersand replacement=\&]
+%  #1 \arrow{r} \& {#2} \arrow{r}{#5} \& {#3} \arrow{r}{#6} \& {#4} \arrow{r} \& #1
+%  \end{tikzcd}
+%}
+%\newcommand{\smatrix}[1]{\left(\begin{smallmatrix}#1\end{smallmatrix}\right)} % small matrix
+\newcommand{\GGr}{\mathbb G \mathrm r}
